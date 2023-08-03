@@ -120,6 +120,29 @@ class MyLinkedListTest {
         Assert.assertEquals(expectedNode, actualNode);
 
     }
+
+    @Test
+    void removeTest() {
+        //Given
+        MyLinkedList list = new MyLinkedList("John");
+        MyNode node1 = new MyNode("Greg", 23);
+        MyNode node2 = new MyNode("Jason", 44);
+        MyNode node3 = new MyNode("Bob", 10);
+        MyNode node4 = new MyNode("Kai", 39);
+        list.add(node1);
+        list.add(node2);
+        list.add(node3);
+        list.add(node4);
+
+        //When
+        int expectedValue = 10;
+        int actualValue = list.remove("Bob");
+
+        //Then
+        Assert.assertEquals(expectedValue, actualValue);
+
+
+    }
     @Test
     void getHead() {
     }

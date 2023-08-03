@@ -50,6 +50,23 @@ public class MyLinkedList {
         return null;
     }
 
+    public Integer remove(String key) {
+        MyNode laggingNode = head;
+        MyNode currentNode = head.getNext();
+
+        while(currentNode.getNext() != null && !currentNode.getPair().getKey().equals(key)) {
+            laggingNode = currentNode;
+            currentNode = currentNode.getNext();
+
+        } if (currentNode == null) {
+            return null;
+        }
+
+        laggingNode.setNext(currentNode.getNext());
+        return currentNode.getPair().getValue();
+    }
+
+
     public MyNode getHead() {
         return head;
     }
